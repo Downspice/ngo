@@ -1,7 +1,6 @@
 "use client"
 import { useTheme } from "next-themes"
 import { usePathname } from "next/navigation";
-import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   const { setTheme } = useTheme()
@@ -9,8 +8,7 @@ export default function Home() {
   const link =usePathname();
   return (
     <>
-      <div>{link} page</div>
-      <HeroSection/>
+      <div>{link}page</div>
     </>
   );
 }
