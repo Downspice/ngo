@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import {
@@ -11,10 +12,12 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Button } from "./ui/button";
 
 export default function NavBar() {
   return (
-    <div className="border-b">
+    <div className="flex justify-between backdrop-blur-sm border-b bg-white/30 sticky top-0  ">
+      <Image src={"/cow.jpg"} alt="logo" height={1000} width={50} />
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -32,7 +35,7 @@ export default function NavBar() {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/our-intiatives" legacyBehavior passHref>
+            <Link href="/our-initiatives" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Our Initiatives
               </NavigationMenuLink>
@@ -47,6 +50,8 @@ export default function NavBar() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+
+      <Button >Donate Now</Button>
     </div>
   );
 }

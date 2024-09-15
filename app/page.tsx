@@ -8,8 +8,7 @@ export default function Home() {
   setTheme("light");
   const link =usePathname();
   return (
-    <>
-      <div>{link} page</div>
+    <> 
       <HeroSection/>
     </>
   );
