@@ -4,7 +4,7 @@ import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import NavBar from "@/components/NavBar";
 
-// const geistSans = localFont({ 
+// const geistSans = localFont({
 //   src: "@/app/fonts/GeistVF.woff",
 //   variable: "--font-geist-sans",
 //   weight: "100 900",
@@ -27,19 +27,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={` antialiased`}
-      >
+      <body className={` antialiased`}>
         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <NavBar/>
-            <div className="px-16">
-            {children}</div>
-          </ThemeProvider>
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="px-16">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   );

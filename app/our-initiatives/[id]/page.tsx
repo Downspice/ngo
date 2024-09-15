@@ -261,8 +261,7 @@ export default function ProjectPage({ params }: ProjectProps) {
 
   return (
     <>
-      <div className="flex justify-center">
-        {" "}
+      <div className="flex justify-center"> 
         <h1>{project.title}</h1>
       </div>
 

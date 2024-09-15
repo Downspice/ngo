@@ -2,15 +2,14 @@
 import ProjectCards from "@/components/ui/projectCards";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
-import Link from 'next/link';
-
+import Link from "next/link";
 
 export default function Home() {
   const { setTheme } = useTheme();
   setTheme("light");
   const link = usePathname();
   type ProjectCard = {
-    id:number;
+    id: number;
     title: string;
     description: string;
     imageSrc: string;
@@ -23,7 +22,7 @@ export default function Home() {
   };
   const projects: ProjectCard[] = [
     {
-      id:1,
+      id: 1,
       title: "Community Library",
       description:
         "A library for underprivileged children to access books and educational resources.",
@@ -38,7 +37,7 @@ export default function Home() {
       conclusionImageSrc: "/logo.png",
     },
     {
-      id:2,
+      id: 2,
       title: "Mobile Classrooms",
       description:
         "Bringing education to remote communities via mobile classrooms.",
@@ -53,7 +52,7 @@ export default function Home() {
       conclusionImageSrc: "/logo.png",
     },
     {
-      id:3,
+      id: 3,
       title: "Digital Learning Hub",
       description:
         "A hub for teaching children digital skills and computer literacy.",
@@ -68,7 +67,7 @@ export default function Home() {
       conclusionImageSrc: "/logo.png",
     },
     {
-      id:4,
+      id: 4,
       title: "Teacher Training Program",
       description:
         "A program to train local teachers in modern education techniques.",
@@ -83,7 +82,7 @@ export default function Home() {
       conclusionImageSrc: "/logo.png",
     },
     {
-      id:5,
+      id: 5,
       title: "STEM Workshops",
       description:
         "Workshops aimed at introducing children to Science, Technology, Engineering, and Math.",
@@ -98,7 +97,7 @@ export default function Home() {
       conclusionImageSrc: "/logo.png",
     },
     {
-      id:6,
+      id: 6,
       title: "Health and Hygiene Education",
       description:
         "Teaching children about the importance of personal health and hygiene.",
@@ -112,7 +111,8 @@ export default function Home() {
         "The Health and Hygiene Education project has led to significant improvements in the overall health of participating children. With continued support, we aim to expand the program to more communities, reaching thousands of children and ensuring that they grow up healthy and informed about their personal well-being.",
       conclusionImageSrc: "/logo.png",
     },
-    {id:7,
+    {
+      id: 7,
       title: "Scholarship Program",
       description:
         "Providing scholarships to deserving children for higher education.",
@@ -126,7 +126,8 @@ export default function Home() {
         "The Scholarship Program has already changed the lives of many children. As we continue to grow, we hope to expand our funding to support more students and help them achieve their dreams of higher education. This initiative is a vital part of our mission to ensure that every child has the chance to succeed, regardless of their background.",
       conclusionImageSrc: "/logo.png",
     },
-    {id:8,
+    {
+      id: 8,
       title: "Arts and Culture Program",
       description:
         "Fostering creativity and cultural appreciation through art and performance.",
@@ -140,7 +141,8 @@ export default function Home() {
         "The Arts and Culture Program has been a tremendous success, with many children discovering a passion for the arts and gaining recognition for their talents. We plan to expand the program to include more diverse art forms and cultural experiences. By nurturing creativity, we are helping children build a more vibrant and enriched future.",
       conclusionImageSrc: "/logo.png",
     },
-    {id:9,
+    {
+      id: 9,
       title: "Sports and Recreation Initiative",
       description:
         "Encouraging physical activity and teamwork through sports and recreation.",
@@ -154,7 +156,8 @@ export default function Home() {
         "The Sports and Recreation Initiative has positively impacted many children, helping them develop a love for sports and an understanding of the importance of physical health. We are committed to expanding this program to reach more communities and introduce new sports and activities. By promoting physical activity and teamwork, we are contributing to the overall well-being and development of children.",
       conclusionImageSrc: "/logo.png",
     },
-    {id:10,
+    {
+      id: 10,
       title: "Environmental Education Project",
       description:
         "Teaching children about environmental conservation and sustainability.",
@@ -168,7 +171,8 @@ export default function Home() {
         "The Environmental Education Project has successfully raised awareness about environmental issues and inspired children to take action in their communities. Moving forward, we plan to develop new initiatives focused on climate change and renewable energy. By educating children about environmental stewardship, we are helping to create a sustainable future for everyone.",
       conclusionImageSrc: "/logo.png",
     },
-    {id:11,
+    {
+      id: 11,
       title: "Parent Education and Support",
       description:
         "Providing parents with resources and knowledge to support their children’s education.",
@@ -246,14 +250,16 @@ export default function Home() {
 
   return (
     <>
-    <div className="flex justify-center"><h1 className="text-align">Want to now what we have been up to?</h1></div>
+      <div className="flex justify-center">
+        <h1 className="text-align">Want to now what we have been up to?</h1>
+      </div>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(17rem,1fr))] p-[0.2rem]  ">
         {projects.map((project, index) => (
           <ProjectCards
             key={index}
             title={project.title}
             description={project.description}
-            imageSrc={project.imageSrc} 
+            imageSrc={project.imageSrc}
             id={project.id}
           />
         ))}
