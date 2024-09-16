@@ -25,7 +25,9 @@ export function ProjectProjectPreview() {
                       <h2>{project.title}</h2>
                       <p>{project.description}</p>
                     </div>
-                    <div className="col-span-2"><Image src={project.imageSrc} fill/></div>
+                    <div className="col-span-2">
+                      <Image src={project.imageSrc} alt="project image" fill />
+                    </div>
                   </div>
                 </CardContent>
               </Card>
