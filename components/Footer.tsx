@@ -17,8 +17,8 @@ export default function Footer() {
         </div>
         <div className="flex justify-center ">
         <h4>
-            "Join us in shaping the next generation by supporting our programs
-            today."
+        &quot;Join us in shaping the next generation by supporting our programs
+            today.&quot;
           </h4></div>
           <div className="flex justify-center">
           <Socials/></div>

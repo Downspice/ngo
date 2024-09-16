@@ -1,13 +1,10 @@
 "use client";
 import ProjectCards from "@/components/ui/projectCards";
-import { useTheme } from "next-themes";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { useTheme } from "next-themes"; 
 
 export default function Home() {
   const { setTheme } = useTheme();
-  setTheme("light");
-  const link = usePathname();
+  setTheme("light"); 
   type ProjectCard = {
     id: number;
     title: string;

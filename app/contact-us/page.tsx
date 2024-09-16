@@ -4,18 +4,12 @@ import Socials from "@/components/Socials";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
-  Facebook,
   HomeIcon,
-  Instagram,
-  Linkedin,
   Mail,
   Phone,
-  Twitter,
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 

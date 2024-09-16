@@ -1,4 +1,4 @@
-import { Circle, CircleArrowRight, CirclePlay } from "lucide-react";
+import { CircleArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import VideoModal from "./VideoModal";
 import { ProjectProjectPreview } from "./ProjectPreviewSection";
@@ -10,12 +10,12 @@ export default function HeroSection() {
         <h1>Welcome to Kids Future</h1>
         <h2>Empowering the Future Through Education</h2>
         <h2>
-          "Bringing quality education and life skills to children in underserved
-          communities."
+        &quot;Bringing quality education and life skills to children in underserved
+          communities.&quot;
         </h2>
         <h3>
-          "Join us in shaping the next generation by supporting our programs
-          today."
+        &quot;Join us in shaping the next generation by supporting our programs
+          today.&quot;
         </h3>
         <Button>
           Click to Donate <CircleArrowRight className="" />

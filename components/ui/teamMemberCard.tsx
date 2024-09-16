@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface TeamMemberCardProps {
@@ -10,7 +11,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ name, title, imageUrl }
   return (
     <div className="relative max-w-xs bg-white rounded-lg overflow-hidden shadow-lg">
       {/* Image fills the card */}
-      <img
+      <Image
         className="w-full h-full object-cover"
         src={imageUrl}
         alt={`${name}'s photo`}

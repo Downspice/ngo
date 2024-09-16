@@ -3,12 +3,10 @@ import TeamMember from "@/components/TeamMember";
 import TeamMemberCard from "@/components/ui/teamMemberCard";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 
 export default function Home() {
   const { setTheme } = useTheme();
   setTheme("light");
-  const link = usePathname();
   return (
     <>
       <h1>Who are we?</h1>
@@ -152,7 +150,7 @@ export default function Home() {
               <p>
                 By 2012, Building Tomorrow Foundation had grown significantly,
                 forming partnerships with local governments and schools. During
-                this period, we launched our "Education for Every Child"
+                this period, we launched our &quot;Education for Every Child&quot;
                 initiative, which became one of our most impactful programs. The
                 initiative focused on removing barriers to education by
                 providing children with scholarships, school supplies, uniforms,
@@ -169,8 +167,8 @@ export default function Home() {
               </p>
               <p>
                 In 2020, in response to the global COVID-19 pandemic, Building
-                Tomorrow Foundation quickly adapted by launching a new "Digital
-                Learning for All" program. This initiative provided children in
+                Tomorrow Foundation quickly adapted by launching a new &quot;Digital
+                Learning for All&quot; program. This initiative provided children in
                 remote and underserved communities with access to online
                 learning platforms, digital devices, and internet connectivity.
                 By ensuring that children could continue their education, even
