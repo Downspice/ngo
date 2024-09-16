@@ -1,9 +1,12 @@
 "use client";
+import React from "react"
+import Socials from "@/components/Socials";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   Facebook,
   HomeIcon,
+  Instagram,
   Linkedin,
   Mail,
   Phone,
@@ -11,11 +14,12 @@ import {
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-export default function Home() {
+export default function ContactUs() {
   const { setTheme } = useTheme();
   setTheme("light");
   const {
@@ -73,11 +77,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col">
               <h2>Follow Our Socials</h2>
-              <div className="flex">
-                <Linkedin />
-                <Facebook />
-                <Twitter />
-              </div>
+              <Socials />
             </div>
           </div>
           <div className="border mt-3 p-3">
@@ -144,3 +144,4 @@ export default function Home() {
     </>
   );
 }
+

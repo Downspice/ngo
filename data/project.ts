@@ -1,4 +1,4 @@
-const projects: ProjectCard[] = [
+export const projects: ProjectCard[] = [
     {
       id:1,
       title: "Community Library",
