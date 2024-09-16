@@ -3,8 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
-import { cn } from "@/lib/utils";
+ 
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -13,71 +12,130 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "./ui/button";
+import { useState } from "react";
+import { Menu, X } from "lucide-react"; // icons for menu and close
 
 export default function NavBar() {
-  return (
-    <div className="flex justify-between backdrop-blur-sm border-b bg-white/30 sticky top-0  ">
-      <Image src={"/cow.jpg"} alt="logo" height={1000} width={50} />
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <Link href="/" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Home
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/about-us" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                About Us
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/our-initiatives" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Our Initiatives
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/contact-us" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Contact Us
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+  const [isOpen, setIsOpen] = useState(false);
 
-      <Button >Donate Now</Button>
+  return (
+    <div className="flex justify-between backdrop-blur-sm border-b bg-white/30 sticky top-0 z-50 w-full">
+      {/* Logo */}
+      <div className="p-4">
+        <Image src={"/cow.jpg"} alt="logo" height={50} width={50} />
+      </div>
+
+      {/* Hamburger menu for mobile */}
+      <div className="block md:hidden p-4">
+        <button onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Navigation menu */}
+      <div className="hidden md:flex items-center">
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <Link href="/" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Home
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/about-us" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  About Us
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/our-initiatives" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Our Initiatives
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/contact-us" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Contact Us
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
+
+      {/* Donate Button */}
+      <div className="hidden md:block p-4">
+        <Button>Donate Now</Button>
+      </div>
+
+      {/* Sidebar for mobile */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 z-50 transform transition-transform ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } md:hidden`}
+      >
+        <div className="p-4 flex justify-between items-center ">
+          <Image src={"/cow.jpg"} alt="logo" height={50} width={50} />
+          <button onClick={() => setIsOpen(false)}>
+            <X size={24} />
+          </button>
+        </div>
+        <div className="bg-white/30  h-dvh">
+          <div className=" w-full ">
+            <Link href="/" legacyBehavior passHref>
+              <div
+                className={`${navigationMenuTriggerStyle()} w-2 `}
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </div>
+            </Link>
+            <div>
+              <div>
+                <Link href="/about-us" legacyBehavior passHref>
+                  <div
+                    className={navigationMenuTriggerStyle()}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    About Us
+                  </div>
+                </Link>
+              </div>
+            </div>
+            <div>
+              <div>
+                <Link href="/our-initiatives" legacyBehavior passHref>
+                  <div
+                    className={navigationMenuTriggerStyle()}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Our Initiatives
+                  </div>
+                </Link>
+              </div>
+            </div>
+            <div>
+              <Link
+                href="/contact-us"
+                legacyBehavior
+                passHref
+                className={navigationMenuTriggerStyle()}
+                onClick={() => setIsOpen(false)}
+              >
+                <div>Contact Us</div>
+              </Link>
+            </div>
+          </div>
+          <div className="p-4">
+            <Button onClick={() => setIsOpen(false)}>Donate Now</Button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";

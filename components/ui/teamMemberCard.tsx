@@ -12,9 +12,11 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ name, title, imageUrl }
     <div className="relative max-w-xs bg-white rounded-lg overflow-hidden shadow-lg">
       {/* Image fills the card */}
       <Image
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover "
         src={imageUrl}
         alt={`${name}'s photo`}
+        width={100}
+        height={100} 
       />
       
       {/* Text block at the bottom */}
