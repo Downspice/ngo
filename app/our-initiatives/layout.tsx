@@ -1,7 +1,9 @@
+import Footer from "@/components/Footer";
+
 export default function OurInitiativesLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <section>{children}</section>;
+  return <section>{children}<Footer/> </section>;
 }
