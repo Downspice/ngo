@@ -5,6 +5,10 @@ export default function AboutUsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section>{children}
-  <Footer/> </section>;
+  return (
+    <section>
+      <div className="px-12">{children}</div>
+      <Footer /> 
+    </section>
+  );
 }

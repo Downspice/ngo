@@ -5,5 +5,11 @@ export default function ContactUsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section><div className="px-12">{children}<Footer/> </div></section>;
+  return (
+    <section>
+      <div className="px-12">
+        {children} 
+      </div><Footer /> 
+    </section>
+  );
 }

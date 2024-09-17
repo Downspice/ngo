@@ -32,7 +32,7 @@ const ProjectCards: React.FC<ProjectCardProps> = ({ id, title, description, imag
           <CardDescription>{description}</CardDescription>
         </CardHeader>
         <CardFooter>
-          <Link className="flex justify-between border" href={`/our-initiatives/${id}`}>
+          <Link className="flex px-2 w-full  justify-between rounded-full bg-primary" href={`/our-initiatives/${id}`}>
             <p>Read More</p>
             <ArrowRightCircle />
           </Link>

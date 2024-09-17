@@ -5,5 +5,10 @@ export default function OurInitiativesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section>{children}<Footer/> </section>;
+  return (
+    <section>
+      <div className="px-48 ">{children}</div>
+      <Footer /> 
+    </section>
+  );
 }

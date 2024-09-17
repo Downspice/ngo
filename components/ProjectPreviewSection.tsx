@@ -8,30 +8,21 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { projects } from "@/data/project";
-import Image from "next/image";
+import { projects } from "@/data/project"; 
 
 export function ProjectProjectPreview() {
   return (
-    <Carousel className="w-full max-w-xl">
+    <Carousel className="w-full p-2 max-w-lg">
       <CarouselContent>
         {projects.map((project) => (
           <CarouselItem key={project.id}>
-            <div className="p-1">
               <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <div className="grid grid-cols-3">
-                    <div className="col-span-1">
-                      <h2>{project.title}</h2>
-                      <p>{project.description}</p>
-                    </div>
-                    <div className="col-span-2">
-                      <Image src={project.imageSrc} alt="project image" fill />
-                    </div>
-                  </div>
+                <CardContent className="flex aspect-square items-center justify-center ">
+                 
+                 
                 </CardContent>
               </Card>
-            </div>
+           
           </CarouselItem>
         ))}
       </CarouselContent>

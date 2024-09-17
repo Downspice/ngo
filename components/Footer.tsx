@@ -6,16 +6,16 @@ import Socials from "./Socials";
 export default function Footer() {
   return (
     <>
-      <section className="pt-4 mt-2 border-t">
+      <section className="py-4 mt-2 border-t">
         <div className="flex justify-center ">
           <Image src={"/logo.png"} height={40} width={40} alt="logo" />
           <h3 className="align-middle">Kids Future</h3>
         </div>
-        <div className="flex justify-center ">
+        <div className="flex justify-center text-center ">
           <h2>Empowering the Future Through Education</h2>
           
         </div>
-        <div className="flex justify-center ">
+        <div className="flex justify-center text-center">
         <h4>
         &quot;Join us in shaping the next generation by supporting our programs
             today.&quot;
