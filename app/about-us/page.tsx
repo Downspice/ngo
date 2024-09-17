@@ -36,7 +36,15 @@ export default function Home() {
                 create an equitable world where every child can unlock their
                 full potential and contribute positively to society.
               </p>
-
+              <div className="md:flex-none md:w-1/3 md:ml-5 mt-5 md:mt-0">
+              <Image
+                src={"/logo.png"}
+                height={200}
+                width={200}
+                alt="pictorial description of our approach"
+                className="float-right md:float-none"
+              />
+            </div>
               <p className="mt-4">Our approach is centered on:</p>
               <ul className="list-disc pl-5 mt-2">
                 <li>
@@ -58,15 +66,7 @@ export default function Home() {
                 privilege but a fundamental human right.
               </p>
             </div>
-            <div className="md:flex-none md:w-1/3 md:ml-5 mt-5 md:mt-0">
-              <Image
-                src={"/logo.png"}
-                height={200}
-                width={200}
-                alt="pictorial description of our approach"
-                className="float-right md:float-none"
-              />
-            </div>
+            
           </div>
         </section>
 

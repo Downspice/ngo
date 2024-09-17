@@ -19,7 +19,7 @@ export default function HeroSection() {
         <Button>
           Click to Donate <CircleArrowRight className="" />
         </Button>
-        <VideoModal video="/video.mp4" videoWidth={1920} videoHeight={1080} />
+        <VideoModal video="https://youtu.be/uni4_O3f9gk" videoWidth={1920} videoHeight={1080} />
       </div>
     </>
   );

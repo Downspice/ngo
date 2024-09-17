@@ -22,7 +22,7 @@ export default function NavBar() {
     <div className="flex justify-between backdrop-blur-sm border-b bg-white/30 sticky top-0 z-50 w-full">
       {/* Logo */}
       <div className="p-1">
-        <Image src={"/cow.jpg"} alt="logo" height={50} width={50} />
+        <Image src={"/logo.png"} alt="logo" height={50} width={50} />
       </div>
 
       {/* Hamburger menu for mobile */}

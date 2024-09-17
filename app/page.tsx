@@ -4,7 +4,7 @@ import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   const { setTheme } = useTheme();
-  setTheme("dark");
+  setTheme("light");
   return (
     <> 
       <div className="bg-scroll  bg-cover bg-[url('/africanStudents.jpg')] ">
