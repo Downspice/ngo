@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
- 
+
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -75,67 +75,61 @@ export default function NavBar() {
 
       {/* Sidebar for mobile */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 z-50 transform transition-transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } md:hidden`}
-      >
-        <div className="p-4 flex justify-between items-center ">
-          <Image src={"/cow.jpg"} alt="logo" height={50} width={50} />
-          <button onClick={() => setIsOpen(false)}>
-            <X size={24} />
-          </button>
+  className={`fixed top-0 left-0 h-full w-64 z-50 transform transition-transform ${
+    isOpen ? "translate-x-0" : "-translate-x-full"
+  } md:hidden`}
+>
+  <div className="p-4 flex justify-between items-center">
+    <Image src={"/cow.jpg"} alt="logo" height={50} width={50} />
+    <button onClick={() => setIsOpen(false)}>
+      <X size={24} />
+    </button>
+  </div>
+  <div className="bg-white h-dvh">
+    <div className="w-full flex flex-col space-y-1"> {/* Add flex and flex-col */}
+      <Link href="/" legacyBehavior passHref>
+        <div
+          className={navigationMenuTriggerStyle()}
+          onClick={() => setIsOpen(false)}
+        >
+          Home
         </div>
-        <div className="bg-white/30  h-dvh">
-          <div className=" w-full ">
-            <Link href="/" legacyBehavior passHref>
-              <div
-                className={`${navigationMenuTriggerStyle()} w-2 `}
-                onClick={() => setIsOpen(false)}
-              >
-                Home
-              </div>
-            </Link>
-            <div>
-              <div>
-                <Link href="/about-us" legacyBehavior passHref>
-                  <div
-                    className={navigationMenuTriggerStyle()}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    About Us
-                  </div>
-                </Link>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Link href="/our-initiatives" legacyBehavior passHref>
-                  <div
-                    className={navigationMenuTriggerStyle()}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Our Initiatives
-                  </div>
-                </Link>
-              </div>
-            </div>
-            <div>
-              <Link
-                href="/contact-us"
-                legacyBehavior
-                passHref
-                className={navigationMenuTriggerStyle()}
-                onClick={() => setIsOpen(false)}
-              >
-                <div>Contact Us</div>
-              </Link>
-            </div>
-          </div>
-          <div className="p-4">
-            <Button onClick={() => setIsOpen(false)}>Donate Now</Button>
-          </div>
+      </Link>
+
+      <Link href="/about-us" legacyBehavior passHref>
+        <div
+          className={navigationMenuTriggerStyle()}
+          onClick={() => setIsOpen(false)}
+        >
+          About Us
         </div>
-      </div>
+      </Link>
+
+      <Link href="/our-initiatives" legacyBehavior passHref>
+        <div
+          className={navigationMenuTriggerStyle()}
+          onClick={() => setIsOpen(false)}
+        >
+          Our Initiatives
+        </div>
+      </Link>
+
+      <Link href="/contact-us" legacyBehavior passHref>
+        <div
+          className={navigationMenuTriggerStyle()}
+          onClick={() => setIsOpen(false)}
+        >
+          Contact Us
+        </div>
+      </Link>
+    </div>
+
+    <div className="p-4">
+      <Button onClick={() => setIsOpen(false)}>Donate Now</Button>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 }

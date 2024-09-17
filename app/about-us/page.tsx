@@ -9,7 +9,7 @@ export default function Home() {
   setTheme("light");
   return (
     <>
-      <h1>Who are we?</h1>
+      <h1 className="text-center">Who are we?</h1>
       <div
         style={{
           fontFamily: "Arial, sans-serif",
@@ -18,13 +18,13 @@ export default function Home() {
           padding: 0,
         }}
       >
-        <h1>Building Tomorrow Foundation</h1>
-        <h4>Mission, Values, and History</h4>
+        <h2 className="text-center">Building Tomorrow Foundation</h2>
+        <h4 className="text-center"> Mission, Values, and History</h4>
 
-        <section style={{ marginBottom: "20px" }}>
+        <section className="mb-5">
           <h2>Mission</h2>
-          <div className="grid grid-cols-3">
-            <div className="col-span-2">
+          <div className="grid grid-cols-3 md:grid-cols-1">
+            <div className="col-span-2 md">
               <p>
                 At Building Tomorrow Foundation, our mission is to empower
                 underprivileged children in Ghana and across Africa by providing
@@ -57,7 +57,7 @@ export default function Home() {
                 privilege but a fundamental human right.
               </p>
             </div>
-            <div col-span-1>
+            <div className="col-span-1">
               <Image
                 src={"/logo.png"}
                 height={100}
@@ -67,63 +67,57 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <h2>Values</h2>
+        <section className="mb-5">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {/* Floating image for small screens */}
+    <div className="relative float-left mr-4 mb-2 md:hidden">
+      <Image
+        src={"/logo.png"}
+        height={100}
+        width={30}
+        alt="pictorial description of our approach"
+      />
+    </div>
 
-        <section style={{ marginBottom: "20px" }}>
-          <h2>Values</h2>
-          <div className="grid grid-cols-3">
-            <div col-span-1>
-              <Image
-                src={"/logo.png"}
-                height={100}
-                width={30}
-                alt="pictorial description of our appraoch "
-              />
-            </div>
-            <div className="col-span-2">
-              <p>
-                Our work at Building Tomorrow Foundation is guided by core
-                values that shape every decision we make:
-              </p>
-              <ul style={{ listStyleType: "disc", paddingLeft: "20px" }}>
-                <li>
-                  <strong>Empathy:</strong> We listen to the needs and dreams of
-                  the children we serve, ensuring that our programs and efforts
-                  are tailored to make a meaningful impact in their lives.
-                </li>
-                <li>
-                  <strong>Inclusion:</strong> We are committed to breaking down
-                  barriers to education. Every child, regardless of gender,
-                  ability, or socioeconomic status, has a right to learn and
-                  thrive.
-                </li>
-                <li>
-                  <strong>Excellence in Education:</strong> We are dedicated to
-                  providing high-quality educational programs that foster both
-                  academic and personal growth, ensuring children are prepared
-                  for future success.
-                </li>
-                <li>
-                  <strong>Collaboration:</strong> Our mission requires
-                  collective effort. We work closely with schools, local
-                  communities, governments, and other organizations to build
-                  sustainable, impactful education programs.
-                </li>
-                <li>
-                  <strong>Transparency and Accountability:</strong> We take
-                  pride in our transparent approach to operations, ensuring that
-                  every action and every dollar spent reflects our dedication to
-                  empowering children through education.
-                </li>
-                <li>
-                  <strong>Empowerment:</strong> We equip children not only with
-                  education but also with the confidence and skills to take
-                  control of their future. We aim to inspire leadership,
-                  self-confidence, and a sense of responsibility.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
+    <div className="col-span-2">
+      <p>
+        Our work at Building Tomorrow Foundation is guided by core values that shape every decision we make:
+      </p>
+      <ul className="list-disc pl-5">
+        <li>
+          <strong>Empathy:</strong> We listen to the needs and dreams of the children we serve, ensuring that our programs and efforts are tailored to make a meaningful impact in their lives.
+        </li>
+        <li>
+          <strong>Inclusion:</strong> We are committed to breaking down barriers to education. Every child, regardless of gender, ability, or socioeconomic status, has a right to learn and thrive.
+        </li>
+        <li>
+          <strong>Excellence in Education:</strong> We are dedicated to providing high-quality educational programs that foster both academic and personal growth, ensuring children are prepared for future success.
+        </li>
+        <li>
+          <strong>Collaboration:</strong> Our mission requires collective effort. We work closely with schools, local communities, governments, and other organizations to build sustainable, impactful education programs.
+        </li>
+        <li>
+          <strong>Transparency and Accountability:</strong> We take pride in our transparent approach to operations, ensuring that every action and every dollar spent reflects our dedication to empowering children through education.
+        </li>
+        <li>
+          <strong>Empowerment:</strong> We equip children not only with education but also with the confidence and skills to take control of their future. We aim to inspire leadership, self-confidence, and a sense of responsibility.
+        </li>
+      </ul>
+    </div>
+
+    {/* Image for larger screens */}
+    <div className="col-span-1 hidden md:block">
+      <Image
+        src={"/logo.png"}
+        height={100}
+        width={30}
+        alt="pictorial description of our approach"
+      />
+    </div>
+  </div>
+</section>
+
 
         <section style={{ marginBottom: "20px" }}>
           <h2>History</h2>
@@ -185,7 +179,7 @@ export default function Home() {
               </p>
               <div></div>
             </div>
-            <div col-span-1>
+            <div className="col-span-1">
               <Image
                 src={"/logo.png"}
                 height={100}
