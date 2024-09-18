@@ -36,7 +36,7 @@ export default function VideoModal({
             height="511"
             src="https://www.youtube.com/embed/oBS1E5r4oi0"
             title="Kenya African Kids free School Education Donate"
-            frameborder="0"
+            
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
