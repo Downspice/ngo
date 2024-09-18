@@ -3,16 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
-
-interface ModalVideoProps {
-  video: string;
-  videoWidth: number;
-  videoHeight: number;
-}
-
-export default function VideoModal({
- 
-}: ModalVideoProps) {
+export default function VideoModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -36,10 +27,9 @@ export default function VideoModal({
             height="511"
             src="https://www.youtube.com/embed/oBS1E5r4oi0"
             title="Kenya African Kids free School Education Donate"
-            
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
         </div>
       </DialogContent>
